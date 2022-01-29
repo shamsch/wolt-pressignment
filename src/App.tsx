@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import InputForm from "./components/InputForm";
 
@@ -53,7 +53,7 @@ const App = () => {
     }
 
     //exceptional rules
-
+    
     //if it's friday rush utc 15:00-19:00
     if (
       dateAndTime.getUTCDay() === 5 &&
@@ -78,7 +78,10 @@ const App = () => {
   };
 
   console.log(fee);
-  
+
+  useEffect(()=>{
+    calculate(value)
+  },[value])
 
   return (
     <div>

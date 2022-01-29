@@ -17,17 +17,17 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setValue(input);
     setInput({
       cartValue: 0,
       deliveryDistance: 0,
       amountOfItems: 0,
       dateAndTime: new Date(),
     });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setValue(input);
   };
 
   return (
