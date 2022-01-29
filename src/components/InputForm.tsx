@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./InputForm.css"
+import "./InputForm.css";
 
 import { IState as IProps } from "../App";
 
 //react date-picker imported
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 
 const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
   const [input, setInput] = useState<IProps["data"]>({
@@ -17,16 +16,22 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput({...input, [e.target.name]: e.target.value})
+    setInput({ ...input, [e.target.name]: e.target.value });
+    setInput({
+      cartValue: 0,
+      deliveryDistance: 0,
+      amountOfItems: 0,
+      dateAndTime: new Date(),
+    });
   };
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setValue(input)
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setValue(input);
+  };
 
   return (
-    <form onSubmit={(e)=> handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <span>Cart Value</span>
       <input
         type="number"
@@ -35,7 +40,6 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         name="cartValue"
       />
       <span className="unit">€</span> <br />
-
       <span>Delivery distance</span>
       <input
         type="number"
@@ -44,7 +48,6 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         name="deliveryDistance"
       />
       <span className="unit">m</span> <br />
-
       <span>Amount of items</span>
       <input
         type="number"
@@ -54,7 +57,6 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
       />
       <span className="unit">🍔</span>
       <br />
-
       <label>Date and time 📆</label>
       <DatePicker
         selected={input.dateAndTime}
@@ -70,11 +72,8 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         dateFormat="MMMM d, yyyy h:mm aa"
         name="dateAndTime"
       />
-      <br/>
-
-      <button>
-        Calculate delivery fee
-      </button>
+      <br />
+      <button>Calculate delivery fee</button>
     </form>
   );
 };
