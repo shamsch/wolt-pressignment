@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import "./InputForm.css"
 
 import { IState as IProps } from "../App";
 
 //react date-picker imported
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import App from "../App";
+
 
 const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
   const [input, setInput] = useState<IProps["data"]>({
@@ -33,7 +34,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         onChange={handleChange}
         name="cartValue"
       />
-      <span> € </span> <br />
+      <span className="unit"> € </span> <br />
 
       <span>Delivery distance</span>
       <input
@@ -42,7 +43,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         onChange={handleChange}
         name="deliveryDistance"
       />
-      <span> m </span> <br />
+      <span className="unit"> m </span> <br />
 
       <span>Amount of items</span>
       <input
@@ -51,6 +52,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         onChange={handleChange}
         name="amountOfItems"
       />
+      <span className="unit">🍔</span>
       <br />
 
       <span>Date and time</span>
@@ -68,6 +70,8 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         dateFormat="MMMM d, yyyy h:mm aa"
         name="dateAndTime"
       />
+      <span className="unit">📅</span>
+      <br/>
 
       <button>
         Calculate delivery fee
