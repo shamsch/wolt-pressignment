@@ -20,12 +20,15 @@ const App = () => {
     dateAndTime: new Date(),
   });
 
-  const [fee, setFee] = useState<number| null>(null);
+  const [fee, setFee] = useState<number | null>(null);
 
   const calculate = (value: IState["data"]) => {
     const { amountOfItems, dateAndTime, cartValue, deliveryDistance } = value;
-    //terminate if there is nothing in this order
-    if (!amountOfItems) {
+
+    //terminate if amount of item or cart value or delivery distance is zero, although this wasn't 
+    //explicitly mentioned but I applied my own discretion here
+
+    if (!amountOfItems || !cartValue || !deliveryDistance) {
       setFee(null);
       return;
     }
@@ -54,7 +57,7 @@ const App = () => {
     }
 
     //exceptional rules
-    
+
     //if it's friday rush utc 15:00-19:00
     if (
       dateAndTime.getUTCDay() === 5 &&
@@ -65,8 +68,8 @@ const App = () => {
     }
 
     //if after all calculation it's more than 15 euro, make it 15
-    if(tempFee>15){
-      tempFee=15;
+    if (tempFee > 15) {
+      tempFee = 15;
     }
 
     //free when the order value is >=100 euro
@@ -80,15 +83,15 @@ const App = () => {
 
   console.log(fee);
 
-  useEffect(()=>{
-    calculate(value)
-  },[value])
+  useEffect(() => {
+    calculate(value);
+  }, [value]);
 
   return (
     <div>
       <h1> Wolt Delivery Fee Calculator </h1>
       <InputForm data={value} setValue={setValue} />
-      {fee!==null && <h3>Calculated fee: {fee} €</h3>}
+      {fee !== null ? <h3>Calculated fee: {fee} €</h3> : <h3> Enter valid values to calculate fees </h3>}
     </div>
   );
 };
