@@ -1,0 +1,31 @@
+form {
+    background-color: #00CDCD;
+    align-items:  center;
+    display: inline-block;
+}
+
+input{
+    margin: 10px 15px;
+}
+
+span {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.unit{
+    margin-left: 10px;
+    text-align: left;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+    display: inline !important;
+}
+
+button{
+    margin: 2% 20%;
+}
