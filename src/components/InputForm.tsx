@@ -34,7 +34,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         onChange={handleChange}
         name="cartValue"
       />
-      <span className="unit"> € </span> <br />
+      <span className="unit">€</span> <br />
 
       <span>Delivery distance</span>
       <input
@@ -43,7 +43,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         onChange={handleChange}
         name="deliveryDistance"
       />
-      <span className="unit"> m </span> <br />
+      <span className="unit">m</span> <br />
 
       <span>Amount of items</span>
       <input
@@ -55,7 +55,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
       <span className="unit">🍔</span>
       <br />
 
-      <span>Date and time</span>
+      <label>Date and time 📆</label>
       <DatePicker
         selected={value.dateAndTime}
         onChange={(e) => {
@@ -70,7 +70,6 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         dateFormat="MMMM d, yyyy h:mm aa"
         name="dateAndTime"
       />
-      <span className="unit">📅</span>
       <br/>
 
       <button>
