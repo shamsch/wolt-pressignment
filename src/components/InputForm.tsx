@@ -57,7 +57,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
 
       <label>Date and time 📆</label>
       <DatePicker
-        selected={value.dateAndTime}
+        selected={input.dateAndTime}
         onChange={(e) => {
           //because e can also be null and it results in type error
           if (e) {
