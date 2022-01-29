@@ -20,12 +20,13 @@ const App = () => {
     dateAndTime: new Date(),
   });
 
-  const [fee, setFee] = useState<number>(0);
+  const [fee, setFee] = useState<number| null>(null);
 
   const calculate = (value: IState["data"]) => {
     const { amountOfItems, dateAndTime, cartValue, deliveryDistance } = value;
     //terminate if there is nothing in this order
     if (!amountOfItems) {
+      setFee(null);
       return;
     }
 
@@ -87,6 +88,7 @@ const App = () => {
     <div>
       <h1> Wolt Delivery Fee Calculator </h1>
       <InputForm data={value} setValue={setValue} />
+      {fee!==null && <h3>Calculated fee: {fee} €</h3>}
     </div>
   );
 };

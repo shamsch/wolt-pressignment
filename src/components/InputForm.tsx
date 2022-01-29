@@ -7,7 +7,7 @@ import { IState as IProps } from "../App";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
+const InputField: React.FC<IProps> = ({setValue}) => {
   const [input, setInput] = useState<IProps["data"]>({
     cartValue: 0,
     deliveryDistance: 0,
@@ -32,7 +32,7 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <span>Cart Value</span>
+      <span>Cart value</span>
       <input
         type="number"
         value={input.cartValue}
