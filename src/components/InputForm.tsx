@@ -19,8 +19,13 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
     setInput({...input, [e.target.name]: e.target.value})
   };
 
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setValue(input)
+  }
+
   return (
-    <form>
+    <form onSubmit={(e)=> handleSubmit(e)}>
       <span>Cart Value</span>
       <input
         type="number"
@@ -63,6 +68,10 @@ const InputField: React.FC<IProps> = ({ data: value, setValue }) => {
         dateFormat="MMMM d, yyyy h:mm aa"
         name="dateAndTime"
       />
+
+      <button>
+        Calculate delivery fee
+      </button>
     </form>
   );
 };
