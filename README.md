@@ -1,6 +1,11 @@
 Hello, 
 
-This is my submission for the **Wolt Summer 2022 Engineering Internships** position. I am applying for the **front-end intern** role. This web app is made with React and Typescript. I have used  `react-testing-library` for testing the function `calculate()` which runs the core fee calculation. There is one dependency, `react-date-picker`, used for creating the date picker. I look forward to hearing feedback from reviewers!
+This is my submission for the **Wolt Summer 2022 Engineering Internships** position. I am applying for the **front-end intern** role. This web app is made with React and Typescript. I have used  `react-testing-library` for testing the function `calculate()` which runs the core fee calculation. There is one dependency, `react-date-picker`, used for creating the date picker. 
+
+
+**Please run the `npm install` command to install the *node_module* folder and then proceed with `npm run start` for starting in localhost server and `npm run test` for running the test module. Further instruction in the drop down below.**
+
+I eagerly look forward to hearing back from recruiter!
 
 Shamsur 
 
