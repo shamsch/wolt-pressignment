@@ -1,5 +1,12 @@
-# Getting Started with Create React App
+Hello, 
 
+This is my submission for the **Wolt Summer 2022 Engineering Internships** position. I am applying for the **front-end intern** role. This web app is made with React and Typescript. I have used  `react-testing-library` for testing the function `calculate()` which runs the core fee calculation. There is one dependency, `react-date-picker`, used for creating the date picker. I look forward to hearing feedback from reviewers!
+
+Shamsur 
+
+<details>
+<summary>Getting Started with Create React App</summary>
+<br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -44,3 +51,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+</details>
+
+
