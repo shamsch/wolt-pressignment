@@ -1,7 +1,7 @@
 import calculate from "./calculate";
 
 describe("Simple base fare and difference to minimum case", () => {
-  test("Testing with 0s", () => {
+  test("Testing with 0s and negative", () => {
     //first testing with all 0s, result null
     expect(
       calculate({
@@ -12,10 +12,10 @@ describe("Simple base fare and difference to minimum case", () => {
       })
     ).toBe(null);
 
-    //testing with some 0s, result null
+    //testing with some negatives, result null
     expect(
       calculate({
-        cartValue: 50,
+        cartValue: -50,
         deliveryDistance: 0,
         amountOfItems: 10,
         dateAndTime: new Date(),

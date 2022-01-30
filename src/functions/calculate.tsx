@@ -4,10 +4,10 @@ import { IState } from "../App";
 const calculate = (value: IState["data"]): number | null => {
     const { amountOfItems, dateAndTime, cartValue, deliveryDistance } = value;
 
-    //terminate if amount of item or cart value or delivery distance is zero
+    //terminate if amount of item or cart value or delivery distance is zero or less
     //although this wasn't explicitly mentioned but I applied my own discretion here
 
-    if (!amountOfItems || !cartValue || !deliveryDistance) {
+    if (amountOfItems<=0 || cartValue<=0 || deliveryDistance<=0) {
       return null;
     }
 
