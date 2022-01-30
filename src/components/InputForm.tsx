@@ -22,12 +22,6 @@ const InputField: React.FC<IProps> = ({setValue}) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setValue(input);
-    setInput({
-      cartValue: 0,
-      deliveryDistance: 0,
-      amountOfItems: 0,
-      dateAndTime: new Date(),
-    });
   };
 
   return (
